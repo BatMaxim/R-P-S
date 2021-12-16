@@ -4,6 +4,8 @@ const RulesGenerator = require("./RulesGenerator");
 const TableGenerator = require("./TableGenerator");
 const GeneratorHMAC = require("./GeneratorHMAC");
 const readLineSync = require("readline-sync");
+
+
 const gameValues = process.argv.slice(2);
 
 if(!InputCheck.checkInputData(gameValues)){
@@ -45,6 +47,6 @@ while(true){
             break;
         default:
             playGame(index-1, bot)
-            console.log(` key: ${HMAC.key}\n`.yellow);
+            console.log(`HMAC key: ${HMAC.key}\n`.yellow);
     }
 }
