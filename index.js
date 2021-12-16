@@ -37,8 +37,8 @@ while(true){
     HMAC.generateHMAC(gameValues[bot]);
     console.log(`HMAC: ${HMAC.HMAC}`.yellow);
     showMenu();
-    let index = readLineSync.keyIn('Enter your move: ',
-        {limit: `$<0-${gameValues.length}>$<?>`});
+    let index = readLineSync.question('Enter your move: ',
+        {limit: ["?", /[0-9]/], limitMessage: 'Use numbers, or "?"'});
     switch (index){
         case "0":
             return;
@@ -46,6 +46,8 @@ while(true){
             tableGenerator.showTable();
             break;
         default:
+            if(index < 0 || index > gameValues.length)
+                break;
             playGame(index-1, bot)
             console.log(`HMAC key: ${HMAC.key}\n`.yellow);
     }
