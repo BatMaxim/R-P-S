@@ -1,0 +1,11 @@
+{
+  "name": "R-P-S",
+  "version": "1.0.0",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "console-table-printer": "^2.10.0",
+    "readline-sync": "^1.4.10",
+    "secure-random": "^1.1.2",
+    "sha3": "^2.1.4"
+  }
+}
